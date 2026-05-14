@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Give to Glory Zone Church — partner with us to Win, Equip and Deploy supernatural believers in Jos and beyond." />
+  <title>Give — Glory Zone Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Give page styles ── */
+
+    /* Give layout */
+    .give-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* Giving card */
+    .giving-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .giving-card__header {
+      background: linear-gradient(135deg, #7B2800 0%, #180804 100%);
+      padding: 32px 36px;
+      color: #fff;
+    }
+    .giving-card__header-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+    }
+    .giving-card__header-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .giving-card__header-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+    }
+    .giving-card__body {
+      padding: 36px;
+    }
+
+    /* Frequency toggle */
+    .freq-toggle {
+      display: flex;
+      background: var(--color-accent-subtle);
+      border-radius: 10px;
+      padding: 4px;
+      margin-bottom: 28px;
+    }
+    .freq-btn {
+      flex: 1;
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--color-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .freq-btn.active {
+      background: #fff;
+      color: var(--color-primary);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Amount buttons */
+    .amount-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 12px;
+    }
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .amount-btn {
+      padding: 14px 10px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .amount-btn:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+    }
+    .amount-btn.selected {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      color: #fff;
+    }
+    .custom-amount-row {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 24px;
+      transition: border-color 0.2s;
+    }
+    .custom-amount-row:focus-within {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(232,96,16,0.12);
+    }
+    .custom-amount-prefix {
+      padding: 13px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-muted);
+      background: var(--color-accent-subtle);
+      border-right: 1.5px solid var(--color-border);
+    }
+    .custom-amount-input {
+      flex: 1;
+      border: none;
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-primary);
+      outline: none;
+    }
+    .custom-amount-input::placeholder { color: var(--color-muted); font-weight: 400; }
+
+    /* Fund select */
+    .giving-fund-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+    .giving-fund-select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      color: var(--color-text);
+      background: #fff;
+      margin-bottom: 24px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .giving-fund-select:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(232,96,16,0.12);
+    }
+
+    /* Payment section */
+    .payment-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .payment-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* Bank details block */
+    .bank-details {
+      background: var(--color-accent-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .bank-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(232,96,16,0.12);
+      font-size: 14px;
+    }
+    .bank-detail-row:last-child { border-bottom: none; }
+    .bank-detail-row__label { color: var(--color-muted); font-size: 12.5px; }
+    .bank-detail-row__value {
+      font-weight: 600;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .copy-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-accent);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover { background: rgba(232,96,16,0.1); }
+
+    /* Give button */
+    .give-submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #E86010, #F5A040);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      margin-bottom: 12px;
+    }
+    .give-submit-btn:hover { opacity: 0.92; transform: translateY(-1px); }
+    .give-secure-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--color-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Sidebar */
+    .give-sidebar-card {
+      background: var(--color-accent-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      margin-bottom: 20px;
+    }
+    .give-sidebar-card__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .give-sidebar-card__verse {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .give-sidebar-card__ref {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+
+    /* Impact cards */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .impact-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .impact-card__amount {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      margin-bottom: 4px;
+    }
+    .impact-card__desc {
+      font-size: 12.5px;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    /* Success overlay */
+    .give-success {
+      display: none;
+      text-align: center;
+      padding: 40px 36px;
+    }
+    .give-success__icon { font-size: 60px; margin-bottom: 16px; }
+    .give-success__title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+    .give-success__desc { font-size: 15px; color: var(--color-muted); line-height: 1.7; margin-bottom: 24px; }
+
+    @media (max-width: 900px) {
+      .give-layout { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .amount-grid { grid-template-columns: repeat(3, 1fr); }
+      .giving-card__body { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logos/images.jpg" alt="Glory Zone Church" class="nav__logo-img" />
+        <div><div class="nav__logo-text">Glory Zone</div><div class="nav__logo-sub">Church</div></div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <div class="page-hero">
+      <span class="page-hero__label">Kingdom Partnership</span>
+      <h1 class="page-hero__title">Give to the Vision</h1>
+      <p class="page-hero__subtitle">
+        Your generosity fuels the mission — winning souls, equipping believers, and deploying Kingdom agents
+        across Jos, Nigeria, and the nations.
+      </p>
+    </div>
+
+    <section class="section section--cream">
+      <div class="container">
+        <div class="give-layout">
+
+          <!-- Giving Card -->
+          <div>
+            <div class="giving-card reveal">
+              <div class="giving-card__header">
+                <div class="giving-card__header-label">Give Online</div>
+                <h2 class="giving-card__header-title">Glory Zone Church</h2>
+                <p class="giving-card__header-sub">Every gift, no matter the size, advances the Kingdom of God.</p>
+              </div>
+
+              <div class="giving-card__body">
+                <div id="give-form-content">
+                  <!-- Frequency -->
+                  <div class="freq-toggle" role="group" aria-label="Giving frequency">
+                    <button class="freq-btn active" onclick="setFreq('once', this)">Give Once</button>
+                    <button class="freq-btn" onclick="setFreq('weekly', this)">Weekly</button>
+                    <button class="freq-btn" onclick="setFreq('monthly', this)">Monthly</button>
+                  </div>
+
+                  <!-- Amount -->
+                  <div class="amount-label">Select Amount (₦)</div>
+                  <div class="amount-grid">
+                    <button class="amount-btn" onclick="selectAmount(this, '5000')">₦5,000</button>
+                    <button class="amount-btn" onclick="selectAmount(this, '10000')">₦10,000</button>
+                    <button class="amount-btn selected" onclick="selectAmount(this, '20000')">₦20,000</button>
+                    <button class="amount-btn" onclick="selectAmount(this, '50000')">₦50,000</button>
+                    <button class="amount-btn" onclick="selectAmount(this, '100000')">₦100,000</button>
+                    <button class="amount-btn" onclick="selectAmount(this, 'custom')">Custom</button>
+                  </div>
+
+                  <div class="custom-amount-row" id="custom-amount-row" style="display:none;">
+                    <span class="custom-amount-prefix">₦</span>
+                    <input type="number" class="custom-amount-input" id="custom-input" placeholder="Enter amount" min="100" />
+                  </div>
+
+                  <!-- Fund -->
+                  <div class="giving-fund-label">Giving Fund</div>
+                  <select class="giving-fund-select" id="giving-fund">
+                    <option value="general">General Fund (Church Operations)</option>
+                    <option value="missions">Missions &amp; Outreach</option>
+                    <option value="building">Building &amp; Facilities</option>
+                    <option value="media">Media Ministry (Supernatural Shift TV)</option>
+                    <option value="jubilee">Jubilee Conference</option>
+                    <option value="scholarship">Kingdom Scholarship Fund</option>
+                  </select>
+
+                  <!-- Bank Transfer Details -->
+                  <div class="payment-section-title">Bank Transfer Details</div>
+                  <div class="bank-details">
+                    <div class="bank-detail-row">
+                      <span class="bank-detail-row__label">Account Name</span>
+                      <span class="bank-detail-row__value">Glory Zone Church <button class="copy-btn" onclick="copyText('Glory Zone Church', this)">Copy</button></span>
+                    </div>
+                    <div class="bank-detail-row">
+                      <span class="bank-detail-row__label">Account Number</span>
+                      <span class="bank-detail-row__value">0123456789 <button class="copy-btn" onclick="copyText('0123456789', this)">Copy</button></span>
+                    </div>
+                    <div class="bank-detail-row">
+                      <span class="bank-detail-row__label">Bank</span>
+                      <span class="bank-detail-row__value">Access Bank Nigeria</span>
+                    </div>
+                    <div class="bank-detail-row">
+                      <span class="bank-detail-row__label">Sort Code</span>
+                      <span class="bank-detail-row__value">044</span>
+                    </div>
+                  </div>
+
+                  <button class="give-submit-btn" onclick="handleGiveSubmit()">
+                    Give Now ₦<span id="give-amount-display">20,000</span>
+                  </button>
+                  <p class="give-secure-note">🔒 Your gift is processed securely. Thank you for your generosity.</p>
+                </div>
+
+                <!-- Success State -->
+                <div class="give-success" id="give-success">
+                  <div class="give-success__icon">🙌</div>
+                  <h2 class="give-success__title">Thank You!</h2>
+                  <p class="give-success__desc">Your gift has been received. Heaven is rejoicing over your generosity. A receipt will be sent to your email shortly.</p>
+                  <a href="index.html" class="btn btn--primary btn--lg">Back to Home</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <div class="give-sidebar-card reveal">
+              <div class="give-sidebar-card__title">Why We Give</div>
+              <p class="give-sidebar-card__verse">"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."</p>
+              <div class="give-sidebar-card__ref">2 Corinthians 9:7</div>
+            </div>
+
+            <div class="give-sidebar-card reveal" style="background:#fff;box-shadow:var(--shadow-sm);border:1px solid var(--color-border);">
+              <div class="give-sidebar-card__title">Your Gift Makes an Impact</div>
+              <div class="impact-grid">
+                <div class="impact-card">
+                  <div class="impact-card__amount">₦5k</div>
+                  <div class="impact-card__desc">Provides Sunday school materials for 10 children</div>
+                </div>
+                <div class="impact-card">
+                  <div class="impact-card__amount">₦10k</div>
+                  <div class="impact-card__desc">Sponsors one outreach event in a Jos community</div>
+                </div>
+                <div class="impact-card">
+                  <div class="impact-card__amount">₦20k</div>
+                  <div class="impact-card__desc">Funds one week of Supernatural Shift TV broadcasts</div>
+                </div>
+                <div class="impact-card">
+                  <div class="impact-card__amount">₦50k</div>
+                  <div class="impact-card__desc">Equips one family facing crisis through Find Help</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="give-sidebar-card reveal" style="background:linear-gradient(135deg,#7B2800,#180804);color:#fff;">
+              <div class="give-sidebar-card__title" style="color:#fff;">Questions About Giving?</div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:16px;">Our team is happy to assist with tithing, first fruit, partnership plans, or any giving question you may have.</p>
+              <a href="contact.html" class="btn btn--outline-white btn--sm" style="display:inline-block;">Contact Us</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Ways to Give -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">More Ways to Partner</span>
+          <h2 class="section-title">Other Ways to Give</h2>
+          <p class="section-subtitle">Beyond the offering basket — here are all the ways you can sow into the Glory Zone vision.</p>
+        </div>
+        <div class="three-col-grid">
+
+          <div class="feature-card reveal">
+            <div class="feature-card__icon">🏦</div>
+            <h3 class="feature-card__title">In-Person Offering</h3>
+            <p class="feature-card__desc">Drop your tithe, offering, or seed into the offering basket every Sunday during either service. Every seed sown in faith is honoured by God.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-card__icon">📱</div>
+            <h3 class="feature-card__title">Mobile Transfer</h3>
+            <p class="feature-card__desc">Send your gift directly via bank transfer using the account details above. Please include your name and "Tithe," "Offering," or the fund name in the narration.</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-card__icon">🌍</div>
+            <h3 class="feature-card__title">International Partners</h3>
+            <p class="feature-card__desc">Giving from outside Nigeria? Contact us at <a href="mailto:info@gloryzoneglobal.org" style="color:var(--color-accent);">info@gloryzoneglobal.org</a> for international wire transfer or domiciliary account details.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="scripture-banner">
+      <p class="scripture-banner__text">
+        "Bring the whole tithe into the storehouse, that there may be food in my house.<br>
+        Test me in this, says the Lord Almighty, and see if I will not throw open the floodgates of heaven."
+      </p>
+      <p class="scripture-banner__ref">Malachi 3:10</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><img src="logos/images.jpg" alt="Glory Zone Church" class="footer__logo-img" /><span class="footer__logo-name">Glory Zone Church</span></a>
+          <p class="footer__tagline">We exist to Win, Equip and Deploy supernatural believers everywhere.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>8:00am &amp; 10:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Prayer</span><span>6:00pm</span></div>
+          </div>
+        </div>
+        <div><h4 class="footer__col-title">Explore</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li><li><a href="ministries.html" class="footer__link">Ministries</a></li><li><a href="sermons.html" class="footer__link">Sermons</a></li></ul></div>
+        <div><h4 class="footer__col-title">Connect</h4><ul class="footer__links"><li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li><li><a href="give.html" class="footer__link">Give Online</a></li><li><a href="contact.html" class="footer__link">Contact Us</a></li></ul></div>
+        <div><h4 class="footer__col-title">Find Us</h4><ul class="footer__links"><li><span style="cursor:default;color:rgba(255,255,255,0.55);font-size:14px;">British America Junction<br>Jos, Plateau State, Nigeria</span></li><li style="margin-top:8px;"><a href="mailto:info@gloryzoneglobal.org" class="footer__link">info@gloryzoneglobal.org</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p>© 2025 Glory Zone Church. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2348000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    let selectedAmount = '20000';
+    let frequency = 'once';
+
+    function setFreq(f, btn) {
+      frequency = f;
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function selectAmount(btn, amount) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedAmount = amount;
+      const customRow = document.getElementById('custom-amount-row');
+      if (amount === 'custom') {
+        customRow.style.display = 'flex';
+        selectedAmount = '';
+      } else {
+        customRow.style.display = 'none';
+        updateDisplay(amount);
+      }
+    }
+
+    function updateDisplay(amount) {
+      const num = parseInt(amount);
+      if (!isNaN(num)) {
+        document.getElementById('give-amount-display').textContent = num.toLocaleString('en-NG');
+      }
+    }
+
+    document.getElementById('custom-input').addEventListener('input', function() {
+      selectedAmount = this.value;
+      updateDisplay(this.value);
+    });
+
+    function handleGiveSubmit() {
+      const amount = selectedAmount || document.getElementById('custom-input').value;
+      if (!amount || parseInt(amount) < 100) {
+        alert('Please enter a valid amount before giving.');
+        return;
+      }
+      document.getElementById('give-form-content').style.display = 'none';
+      document.getElementById('give-success').style.display = 'block';
+    }
+
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => { btn.textContent = orig; }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sermons from Glory Zone Church — messages that move you forward. Watch and listen to Pastor Peniel Utibe online." />
+  <title>Sermons — Glory Zone Church</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .sermon-filters { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+    .sermon-filter-btn { padding:8px 20px; border:1.5px solid var(--color-border); background:white; border-radius:var(--radius-full); font-size:14px; font-weight:600; cursor:pointer; transition:all var(--transition-fast); font-family:var(--font-body); color:var(--color-text-soft); }
+    .sermon-filter-btn:hover, .sermon-filter-btn.active { background:var(--color-accent); border-color:var(--color-accent); color:white; }
+    .search-wrap { position:relative; margin-bottom:40px; }
+    .search-wrap svg { position:absolute; left:16px; top:50%; transform:translateY(-50%); width:18px; height:18px; stroke:var(--color-muted); fill:none; }
+    #sermon-search { padding-left:48px; }
+    .video-hero-card { border-radius:var(--radius-2xl); overflow:hidden; position:relative; aspect-ratio:16/7; margin-bottom:48px; }
+    .video-hero-card video { width:100%; height:100%; object-fit:cover; }
+    .video-hero-card__overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(24,8,4,0.92) 0%,rgba(24,8,4,0.4) 60%,transparent 100%); }
+    .video-hero-card__content { position:absolute; bottom:0; left:0; right:0; padding:40px; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logos/images.jpg" alt="Glory Zone Church" class="nav__logo-img" />
+        <div><div class="nav__logo-text">Glory Zone</div><div class="nav__logo-sub">Church</div></div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link nav__link--active">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <div class="page-hero">
+      <span class="page-hero__label">Fresh Word</span>
+      <h1 class="page-hero__title">Messages That Move You Forward</h1>
+      <p class="page-hero__subtitle">Every sermon is designed to shift, equip, and deploy you. Watch, listen, and share — wherever you are in the world.</p>
+    </div>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Featured Video from Encounters series -->
+        <div class="video-hero-card reveal">
+          <video autoplay muted loop playsinline poster="Images/THE PROTOCOL OF ENCOUNTERS 🔥As we prepare for Jubilee XIV, do not show up casually. God honors (6).webp">
+            <source src="Videos/Encounters with God are rarely accidental.There's a posture that invites them.God is always spea.mp4" type="video/mp4" />
+          </video>
+          <div class="video-hero-card__overlay"></div>
+          <div class="video-hero-card__content">
+            <span style="display:inline-block;background:rgba(232,96,16,0.25);border:1px solid rgba(232,96,16,0.5);border-radius:var(--radius-full);padding:4px 14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-light);margin-bottom:12px;">Featured Message</span>
+            <h2 style="color:white;font-size:clamp(22px,3vw,36px);margin-bottom:8px;">Encounters with God Are Never Accidental</h2>
+            <p style="color:rgba(255,255,255,0.7);margin-bottom:20px;">Pastor Peniel Utibe · Supernatural Shift Series</p>
+            <a href="https://www.youtube.com/@gloryzonechurch" target="_blank" class="btn btn--white">Watch on YouTube</a>
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="search-wrap reveal">
+          <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="sermon-search" class="form-input" placeholder="Search messages by title, series, or topic…" />
+        </div>
+
+        <!-- Sermon Grid -->
+        <div class="grid grid-3 reveal">
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/THE PROTOCOL OF ENCOUNTERS 🔥As we prepare for Jubilee XIV, do not show up casually. God honors (2).webp" alt="Do Not Show Up Casually" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Jubilee XIV · Protocol of Encounters</div>
+              <div class="sermon-card__title">Do Not Show Up Casually</div>
+              <div class="sermon-card__speaker">Pastor Peniel Utibe · 2025</div>
+            </div>
+          </div>
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/THE PROTOCOL OF ENCOUNTERS 🔥As we prepare for Jubilee XIV, do not show up casually. God honors (3).webp" alt="God Honors the Prepared" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Jubilee XIV · Protocol of Encounters</div>
+              <div class="sermon-card__title">God Honours the Prepared Heart</div>
+              <div class="sermon-card__speaker">Pastor Peniel Utibe · 2025</div>
+            </div>
+          </div>
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/THE PROTOCOL OF ENCOUNTERS 🔥As we prepare for Jubilee XIV, do not show up casually. God honors (5).webp" alt="There's a Posture That Invites God" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Supernatural Shift Series</div>
+              <div class="sermon-card__title">There's a Posture That Invites Encounters</div>
+              <div class="sermon-card__speaker">Pastor Peniel Utibe · 2025</div>
+            </div>
+          </div>
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/THE PROTOCOL OF ENCOUNTERS 🔥As we prepare for Jubilee XIV, do not show up casually. God honors (7).webp" alt="God Is Always Speaking" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Supernatural Shift Series</div>
+              <div class="sermon-card__title">God Is Always Speaking — Are You Listening?</div>
+              <div class="sermon-card__speaker">Pastor Peniel Utibe · 2025</div>
+            </div>
+          </div>
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/Forever, we join the host of Heaven to sing the song of angels, only you deserve our praise💃🕺 (1).webp" alt="Forever — Songs of Heaven" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Worship &amp; Glory Series</div>
+              <div class="sermon-card__title">Forever — We Join the Host of Heaven</div>
+              <div class="sermon-card__speaker">Glory Zone Worship · 2025</div>
+            </div>
+          </div>
+
+          <div class="sermon-card">
+            <div class="sermon-card__thumb">
+              <img src="Pastors photo/Forever, we join the host of Heaven to sing the song of angels, only you deserve our praise💃🕺.webp" alt="Only You Deserve Our Praise" />
+              <div class="sermon-card__play"><div class="sermon-card__play-btn"><svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+            </div>
+            <div class="sermon-card__body">
+              <div class="sermon-card__series">Worship &amp; Glory Series</div>
+              <div class="sermon-card__title">Only You Deserve Our Praise</div>
+              <div class="sermon-card__speaker">Glory Zone Worship · 2025</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:48px;" class="reveal">
+          <p style="color:var(--color-muted);margin-bottom:20px;">Watch all our messages live and on demand on YouTube.</p>
+          <a href="https://www.youtube.com/@gloryzonechurch" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            Watch on YouTube
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TV / Radio section -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Media Ministry</span>
+          <h2>Watch &amp; Listen Anywhere</h2>
+          <p class="section-header__desc">The Word of God is not confined to Sunday morning. Tune in and encounter God wherever you are.</p>
+        </div>
+        <div class="grid grid-2 reveal" style="gap:32px;max-width:800px;margin:0 auto;">
+          <div style="background:white;border-radius:var(--radius-xl);padding:40px;border:1px solid var(--color-border-light);box-shadow:var(--shadow-sm);text-align:center;">
+            <div style="font-size:48px;margin-bottom:16px;">📺</div>
+            <h3 style="margin-bottom:12px;">Supernatural Shift</h3>
+            <p style="color:var(--color-muted);font-size:14px;line-height:1.7;margin-bottom:20px;">Pastor Peniel Utibe's television programme — shaping the culture of the emerging generation with the power of God's Word.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">Find Out More</a>
+          </div>
+          <div style="background:white;border-radius:var(--radius-xl);padding:40px;border:1px solid var(--color-border-light);box-shadow:var(--shadow-sm);text-align:center;">
+            <div style="font-size:48px;margin-bottom:16px;">📻</div>
+            <h3 style="margin-bottom:12px;">Success Recipe</h3>
+            <p style="color:var(--color-muted);font-size:14px;line-height:1.7;margin-bottom:20px;">A radio broadcast delivering Kingdom principles for everyday success — practical, powerful, and prophetic.</p>
+            <a href="contact.html" class="btn btn--secondary btn--sm">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="scripture-banner">
+      <p class="scripture-banner__text">"So faith comes from hearing, and hearing through the word of Christ."</p>
+      <p class="scripture-banner__ref">Romans 10:17</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><img src="logos/images.jpg" alt="Glory Zone Church" class="footer__logo-img" /><span class="footer__logo-name">Glory Zone Church</span></a>
+          <p class="footer__tagline">We exist to Win, Equip and Deploy supernatural believers everywhere.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>8:00am &amp; 10:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Prayer</span><span>6:00pm</span></div>
+            <div class="footer__service-time"><span>Friday Youth Night</span><span>5:00pm</span></div>
+          </div>
+        </div>
+        <div><h4 class="footer__col-title">Explore</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li><li><a href="ministries.html" class="footer__link">Ministries</a></li><li><a href="sermons.html" class="footer__link">Sermons</a></li><li><a href="find-help.html" class="footer__link">Find Help</a></li></ul></div>
+        <div><h4 class="footer__col-title">Connect</h4><ul class="footer__links"><li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li><li><a href="give.html" class="footer__link">Give Online</a></li><li><a href="contact.html" class="footer__link">Contact Us</a></li></ul></div>
+        <div><h4 class="footer__col-title">Find Us</h4><ul class="footer__links"><li><span style="cursor:default;color:rgba(255,255,255,0.55);font-size:14px;">British America Junction<br>Jos, Plateau State, Nigeria</span></li><li style="margin-top:8px;"><a href="mailto:info@gloryzoneglobal.org" class="footer__link">info@gloryzoneglobal.org</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p>© 2025 Glory Zone Church. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2348000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="white"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>
