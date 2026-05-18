@@ -1,16 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find help and hope at Glory Zone Church — scripture, prayer, and pastoral care for what you are facing." />
-  <title>Find Help — Glory Zone Church</title>
+  <meta name="description" content="Find help and hope at Glory Zone Church â€” scripture, prayer, and pastoral care for what you are facing." />
+  <title>Find Help â€” Glory Zone Church</title>
+    <link rel="icon" href="logos/8YkVA8Vz_400x400.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="logos/8YkVA8Vz_400x400.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" href="logos/8YkVA8Vz_400x400.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="logos/8YkVA8Vz_400x400.jpg" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* ── Help Detail styles ── */
+    /* â”€â”€ Help Detail styles â”€â”€ */
     .breadcrumb {
       font-size: 13px;
       color: rgba(255,255,255,0.6);
@@ -151,7 +155,7 @@
       line-height: 1.6;
     }
     .scripture-list li::before {
-      content: '✦';
+      content: 'âœ¦';
       color: var(--color-accent);
       font-size: 10px;
       margin-top: 5px;
@@ -283,7 +287,7 @@
     </div>
   </nav>
   <div class="mobile-nav" id="mobile-nav">
-    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <button class="mobile-nav__close" id="mobile-nav-close">âœ•</button>
     <ul class="mobile-nav__links">
       <li><a href="index.html" class="mobile-nav__link">Home</a></li>
       <li><a href="about.html" class="mobile-nav__link">About</a></li>
@@ -299,12 +303,12 @@
 
   <main>
 
-    <!-- Dynamic hero — filled by JS based on topic param -->
+    <!-- Dynamic hero â€” filled by JS based on topic param -->
     <div class="page-hero" id="detail-hero">
       <nav class="breadcrumb" aria-label="breadcrumb">
-        <a href="index.html">Home</a><span>›</span>
-        <a href="find-help.html">Find Help</a><span>›</span>
-        <span id="topic-breadcrumb">—</span>
+        <a href="index.html">Home</a><span>â€º</span>
+        <a href="find-help.html">Find Help</a><span>â€º</span>
+        <span id="topic-breadcrumb">â€”</span>
       </nav>
       <span class="page-hero__label" id="hero-label">Finding Help</span>
       <h1 class="page-hero__title" id="hero-title">You Are Not Alone</h1>
@@ -321,8 +325,8 @@
             <!-- Scripture card -->
             <div class="scripture-card reveal" id="scripture-card">
               <div class="scripture-card__label">A Word For You</div>
-              <div class="scripture-card__verse" id="card-verse">Loading…</div>
-              <div class="scripture-card__ref" id="card-ref">—</div>
+              <div class="scripture-card__verse" id="card-verse">Loadingâ€¦</div>
+              <div class="scripture-card__ref" id="card-ref">â€”</div>
             </div>
 
             <!-- Pastoral message -->
@@ -335,8 +339,8 @@
             <div class="prayer-section reveal" id="prayer-section">
               <div class="prayer-section__label">A Prayer For You</div>
               <h3 class="prayer-section__title" id="prayer-title">Pray This Now</h3>
-              <div class="prayer-section__text" id="prayer-text">Loading…</div>
-              <button class="pray-aloud-btn" onclick="togglePrayerRead(this)">🔊 Read Aloud</button>
+              <div class="prayer-section__text" id="prayer-text">Loadingâ€¦</div>
+              <button class="pray-aloud-btn" onclick="togglePrayerRead(this)">ðŸ”Š Read Aloud</button>
             </div>
 
             <!-- Scriptures for meditation -->
@@ -362,11 +366,11 @@
               <form class="prayer-request-form" onsubmit="handleSidebarPrayer(event)">
                 <input type="text" placeholder="Your name" required />
                 <input type="email" placeholder="Email (optional)" />
-                <textarea placeholder="Your prayer request…" required></textarea>
+                <textarea placeholder="Your prayer requestâ€¦" required></textarea>
                 <button type="submit" class="btn btn--primary" style="width:100%;margin-top:4px;">Send Prayer Request</button>
               </form>
               <div id="sidebar-prayer-success" style="display:none;text-align:center;padding:16px;color:#1E8040;font-weight:600;">
-                🙏 Received — our team is praying for you.
+                ðŸ™ Received â€” our team is praying for you.
               </div>
             </div>
 
@@ -374,21 +378,21 @@
             <div class="help-sidebar-card reveal">
               <h3 class="help-sidebar-card__title">Sermons That May Help</h3>
               <div id="recommended-sermons"></div>
-              <a href="sermons.html" style="font-size:13px;color:var(--color-accent);font-weight:600;text-decoration:none;">View all sermons →</a>
+              <a href="sermons.html" style="font-size:13px;color:var(--color-accent);font-weight:600;text-decoration:none;">View all sermons â†’</a>
             </div>
 
             <!-- Other categories -->
             <div class="help-sidebar-card reveal">
               <h3 class="help-sidebar-card__title">Other Areas of Help</h3>
               <nav>
-                <a href="find-help-detail.html?topic=grief"      class="other-category-link"><span>💔</span> Grief &amp; Loss</a>
-                <a href="find-help-detail.html?topic=healing"    class="other-category-link"><span>🩺</span> Healing &amp; Health</a>
-                <a href="find-help-detail.html?topic=finances"   class="other-category-link"><span>💸</span> Financial Hardship</a>
-                <a href="find-help-detail.html?topic=anxiety"    class="other-category-link"><span>😟</span> Anxiety &amp; Fear</a>
-                <a href="find-help-detail.html?topic=addiction"  class="other-category-link"><span>🔗</span> Addiction &amp; Bondage</a>
-                <a href="find-help-detail.html?topic=salvation"  class="other-category-link"><span>✝️</span> Need Salvation?</a>
-                <a href="find-help-detail.html?topic=loneliness" class="other-category-link"><span>🤍</span> Loneliness</a>
-                <a href="find-help-detail.html?topic=marriage"   class="other-category-link"><span>💍</span> Marriage in Crisis</a>
+                <a href="find-help-detail.html?topic=grief"      class="other-category-link"><span>ðŸ’”</span> Grief &amp; Loss</a>
+                <a href="find-help-detail.html?topic=healing"    class="other-category-link"><span>ðŸ©º</span> Healing &amp; Health</a>
+                <a href="find-help-detail.html?topic=finances"   class="other-category-link"><span>ðŸ’¸</span> Financial Hardship</a>
+                <a href="find-help-detail.html?topic=anxiety"    class="other-category-link"><span>ðŸ˜Ÿ</span> Anxiety &amp; Fear</a>
+                <a href="find-help-detail.html?topic=addiction"  class="other-category-link"><span>ðŸ”—</span> Addiction &amp; Bondage</a>
+                <a href="find-help-detail.html?topic=salvation"  class="other-category-link"><span>âœï¸</span> Need Salvation?</a>
+                <a href="find-help-detail.html?topic=loneliness" class="other-category-link"><span>ðŸ¤</span> Loneliness</a>
+                <a href="find-help-detail.html?topic=marriage"   class="other-category-link"><span>ðŸ’</span> Marriage in Crisis</a>
               </nav>
             </div>
 
@@ -422,7 +426,7 @@
         <div><h4 class="footer__col-title">Connect</h4><ul class="footer__links"><li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li><li><a href="give.html" class="footer__link">Give Online</a></li><li><a href="contact.html" class="footer__link">Contact Us</a></li></ul></div>
         <div><h4 class="footer__col-title">Find Us</h4><ul class="footer__links"><li><span style="cursor:default;color:rgba(255,255,255,0.55);font-size:14px;">British America Junction<br>Jos, Plateau State, Nigeria</span></li><li style="margin-top:8px;"><a href="mailto:info@gloryzoneglobal.org" class="footer__link">info@gloryzoneglobal.org</a></li></ul></div>
       </div>
-      <div class="footer__bottom"><p>© 2025 Glory Zone Church. All rights reserved.</p></div>
+      <div class="footer__bottom"><p>Â© 2025 Glory Zone Church. All rights reserved.</p></div>
     </div>
   </footer>
 
@@ -436,17 +440,17 @@
       grief: {
         label: 'Grief & Loss',
         title: 'You Are Allowed to Grieve',
-        subtitle: 'Loss is real, and pain is valid. But grief does not have the final word — God\'s comfort does.',
+        subtitle: 'Loss is real, and pain is valid. But grief does not have the final word â€” God\'s comfort does.',
         verse: '"Blessed are those who mourn, for they will be comforted."',
         ref: 'Matthew 5:4',
         pastoralTitle: 'To Those Who Are Grieving',
-        pastoralBody: `<p>Grief is one of the most human experiences there is — and one of the loneliest. Whether you have lost a person, a relationship, a dream, or a season of your life, the weight of that loss is real and it matters deeply to God.</p><p>The God of the Bible does not tell grieving people to "cheer up" or "be strong." He enters the grief with them. When Lazarus died, Jesus wept — not because He lacked power, but because He has compassion. He is near to the brokenhearted.</p><p>You are allowed to cry. You are allowed to struggle. And you are allowed to bring every broken piece to a God who specialises in restoration. He will not waste your pain.</p>`,
-        prayer: `Father, You see everything I am carrying right now. The ache in my chest, the tears I don\'t even know how to cry. I am not going to pretend I am okay — I bring You this grief honestly. God, I trust that You are the God of all comfort. Wrap Your arms around my heart. Remind me that this loss does not have the final word. I receive Your peace now, in Jesus\' name. Amen.`,
+        pastoralBody: `<p>Grief is one of the most human experiences there is â€” and one of the loneliest. Whether you have lost a person, a relationship, a dream, or a season of your life, the weight of that loss is real and it matters deeply to God.</p><p>The God of the Bible does not tell grieving people to "cheer up" or "be strong." He enters the grief with them. When Lazarus died, Jesus wept â€” not because He lacked power, but because He has compassion. He is near to the brokenhearted.</p><p>You are allowed to cry. You are allowed to struggle. And you are allowed to bring every broken piece to a God who specialises in restoration. He will not waste your pain.</p>`,
+        prayer: `Father, You see everything I am carrying right now. The ache in my chest, the tears I don\'t even know how to cry. I am not going to pretend I am okay â€” I bring You this grief honestly. God, I trust that You are the God of all comfort. Wrap Your arms around my heart. Remind me that this loss does not have the final word. I receive Your peace now, in Jesus\' name. Amen.`,
         prayerTitle: 'A Prayer in Your Grief',
         scriptures: [
           { ref: 'Psalm 34:18', text: '"The Lord is close to the brokenhearted and saves those who are crushed in spirit."' },
           { ref: 'Revelation 21:4', text: '"He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain."' },
-          { ref: '2 Corinthians 1:3–4', text: '"The God of all comfort, who comforts us in all our troubles…"' },
+          { ref: '2 Corinthians 1:3â€“4', text: '"The God of all comfort, who comforts us in all our troublesâ€¦"' },
           { ref: 'Psalm 23:4', text: '"Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me."' },
         ],
         sermons: ['Healing What Grief Broke', 'When God Feels Silent', 'The Comfort of the Holy Spirit'],
@@ -458,12 +462,12 @@
         verse: '"By his wounds you have been healed."',
         ref: '1 Peter 2:24',
         pastoralTitle: 'A Word on Divine Healing',
-        pastoralBody: `<p>We believe unashamedly in divine healing. Not as an afterthought or a footnote — but as a central expression of who Jesus is. He is the same yesterday, today, and forever, and He is still in the healing business.</p><p>When the woman with the issue of blood pressed through the crowd, her healing was not incidental — it was the will of God. Whatever diagnosis you carry, whatever prognosis you have been given, there is a word from Heaven that has not changed: "By His stripes you are healed."</p><p>We encourage you to pray, to believe, and to also pursue good medical care — God works through both the supernatural and the natural. But know this: your body is not beyond the reach of His power.</p>`,
-        prayer: `Jesus, You are the same God who healed the leper, the blind man, and the woman who pressed through the crowd. I come to You now with my body, my pain, my diagnosis. I declare that You are my healer. I receive Your healing by faith right now. Where doctors have reached their limit, Your power has not. Touch me, Lord — from the crown of my head to the soles of my feet. I trust You. Amen.`,
+        pastoralBody: `<p>We believe unashamedly in divine healing. Not as an afterthought or a footnote â€” but as a central expression of who Jesus is. He is the same yesterday, today, and forever, and He is still in the healing business.</p><p>When the woman with the issue of blood pressed through the crowd, her healing was not incidental â€” it was the will of God. Whatever diagnosis you carry, whatever prognosis you have been given, there is a word from Heaven that has not changed: "By His stripes you are healed."</p><p>We encourage you to pray, to believe, and to also pursue good medical care â€” God works through both the supernatural and the natural. But know this: your body is not beyond the reach of His power.</p>`,
+        prayer: `Jesus, You are the same God who healed the leper, the blind man, and the woman who pressed through the crowd. I come to You now with my body, my pain, my diagnosis. I declare that You are my healer. I receive Your healing by faith right now. Where doctors have reached their limit, Your power has not. Touch me, Lord â€” from the crown of my head to the soles of my feet. I trust You. Amen.`,
         prayerTitle: 'A Prayer for Healing',
         scriptures: [
           { ref: 'Isaiah 53:5', text: '"By his wounds we are healed."' },
-          { ref: 'James 5:14–15', text: '"Is anyone among you sick? Let them call the elders of the church to pray…"' },
+          { ref: 'James 5:14â€“15', text: '"Is anyone among you sick? Let them call the elders of the church to prayâ€¦"' },
           { ref: 'Jeremiah 30:17', text: '"\'I will restore you to health and heal your wounds,\' declares the Lord."' },
           { ref: 'Psalm 103:3', text: '"He forgives all your sins and heals all your diseases."' },
         ],
@@ -476,14 +480,14 @@
         verse: '"And my God will meet all your needs according to the riches of his glory in Christ Jesus."',
         ref: 'Philippians 4:19',
         pastoralTitle: 'When the Bills Feel Impossible',
-        pastoralBody: `<p>Financial pressure can feel all-consuming. The anxiety of unpaid bills, unexpected medical costs, job loss, or debt can paralyse even the most faithful believer. But here is the truth: your Heavenly Father has not gone bankrupt.</p><p>God calls Himself Jehovah Jireh — the Lord who provides. This is not just a pretty name; it was spoken over a situation where all human provision had run out. Abraham had nothing — and God stepped in.</p><p>We encourage you to be practical: make a budget, seek financial counsel, explore legitimate opportunities. And pray. God cares about every aspect of your life, including your finances, and He has promised to provide for every genuine need of His children.</p>`,
-        prayer: `Lord, I am honest with You about where I am — the bills, the stress, the fear of what tomorrow holds. I bring my finances to You now. You are Jehovah Jireh, my provider. Open doors I cannot see. Release resources I have not expected. Give me wisdom to manage what You send. I rebuke the spirit of poverty and I receive Your supernatural provision, in Jesus\' name. Amen.`,
+        pastoralBody: `<p>Financial pressure can feel all-consuming. The anxiety of unpaid bills, unexpected medical costs, job loss, or debt can paralyse even the most faithful believer. But here is the truth: your Heavenly Father has not gone bankrupt.</p><p>God calls Himself Jehovah Jireh â€” the Lord who provides. This is not just a pretty name; it was spoken over a situation where all human provision had run out. Abraham had nothing â€” and God stepped in.</p><p>We encourage you to be practical: make a budget, seek financial counsel, explore legitimate opportunities. And pray. God cares about every aspect of your life, including your finances, and He has promised to provide for every genuine need of His children.</p>`,
+        prayer: `Lord, I am honest with You about where I am â€” the bills, the stress, the fear of what tomorrow holds. I bring my finances to You now. You are Jehovah Jireh, my provider. Open doors I cannot see. Release resources I have not expected. Give me wisdom to manage what You send. I rebuke the spirit of poverty and I receive Your supernatural provision, in Jesus\' name. Amen.`,
         prayerTitle: 'A Prayer for Provision',
         scriptures: [
           { ref: 'Philippians 4:19', text: '"And my God will meet all your needs according to the riches of his glory in Christ Jesus."' },
-          { ref: 'Luke 12:24', text: '"Consider the ravens: they do not sow or reap… yet God feeds them. How much more valuable you are than birds!"' },
-          { ref: 'Malachi 3:10', text: '"Bring the whole tithe into the storehouse… test me in this, says the Lord."' },
-          { ref: 'Proverbs 3:9–10', text: '"Honour the Lord with your wealth… then your barns will be filled to overflowing."' },
+          { ref: 'Luke 12:24', text: '"Consider the ravens: they do not sow or reapâ€¦ yet God feeds them. How much more valuable you are than birds!"' },
+          { ref: 'Malachi 3:10', text: '"Bring the whole tithe into the storehouseâ€¦ test me in this, says the Lord."' },
+          { ref: 'Proverbs 3:9â€“10', text: '"Honour the Lord with your wealthâ€¦ then your barns will be filled to overflowing."' },
         ],
         sermons: ['Kingdom Economics', 'Breaking the Spirit of Lack', 'Seedtime and Harvest'],
       },
@@ -494,11 +498,11 @@
         verse: '"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."',
         ref: 'Philippians 4:6',
         pastoralTitle: 'When Worry Has Taken Over',
-        pastoralBody: `<p>Anxiety is one of the most common battles believers face today — and one of the most misunderstood. Feeling anxious does not mean you lack faith. It means you are human, navigating a broken world. But God has a better way for you.</p><p>The Bible\'s most repeated command is "do not fear" — and this is not a rebuke; it is an invitation. God is saying, "You don\'t have to carry this." His peace is not the absence of circumstances; it is a supernatural calm that exists in the middle of the storm.</p><p>If your anxiety is severe or clinical, please also seek professional support — God can work through trained counsellors. But as you do, also bring your fears to the one who knew them before you did and has a plan that ends in your good.</p>`,
-        prayer: `Father, my mind has been running — from worry to worry, from fear to fear. Right now I make a choice: I cast every anxious thought at Your feet. I release the burden of tomorrow. I release the weight of the unknown. I receive the peace of God which surpasses my understanding right now. Guard my heart and mind in Christ Jesus. Let Your perfect love cast out every fear. Amen.`,
+        pastoralBody: `<p>Anxiety is one of the most common battles believers face today â€” and one of the most misunderstood. Feeling anxious does not mean you lack faith. It means you are human, navigating a broken world. But God has a better way for you.</p><p>The Bible\'s most repeated command is "do not fear" â€” and this is not a rebuke; it is an invitation. God is saying, "You don\'t have to carry this." His peace is not the absence of circumstances; it is a supernatural calm that exists in the middle of the storm.</p><p>If your anxiety is severe or clinical, please also seek professional support â€” God can work through trained counsellors. But as you do, also bring your fears to the one who knew them before you did and has a plan that ends in your good.</p>`,
+        prayer: `Father, my mind has been running â€” from worry to worry, from fear to fear. Right now I make a choice: I cast every anxious thought at Your feet. I release the burden of tomorrow. I release the weight of the unknown. I receive the peace of God which surpasses my understanding right now. Guard my heart and mind in Christ Jesus. Let Your perfect love cast out every fear. Amen.`,
         prayerTitle: 'A Prayer Over Your Anxious Mind',
         scriptures: [
-          { ref: 'Philippians 4:6–7', text: '"Do not be anxious about anything… the peace of God will guard your hearts and minds."' },
+          { ref: 'Philippians 4:6â€“7', text: '"Do not be anxious about anythingâ€¦ the peace of God will guard your hearts and minds."' },
           { ref: '1 Peter 5:7', text: '"Cast all your anxiety on him because he cares for you."' },
           { ref: '2 Timothy 1:7', text: '"God has not given us a spirit of fear, but of power, love and sound mind."' },
           { ref: 'Isaiah 41:10', text: '"Do not fear, for I am with you; do not be dismayed, for I am your God."' },
@@ -508,18 +512,18 @@
       addiction: {
         label: 'Addiction & Bondage',
         title: 'Jesus Came to Set You Free',
-        subtitle: 'What holds you captive today does not have to hold you tomorrow. Freedom is not just possible — it is promised.',
+        subtitle: 'What holds you captive today does not have to hold you tomorrow. Freedom is not just possible â€” it is promised.',
         verse: '"So if the Son sets you free, you will be free indeed."',
         ref: 'John 8:36',
         pastoralTitle: 'There is No Chain Too Strong for His Power',
-        pastoralBody: `<p>Addiction, bondage, compulsive behaviour, secret sin — these are areas where shame often keeps people trapped in silence. But shame has no power where truth is spoken. The first step to freedom is honesty.</p><p>Jesus did not come for perfect people. He came for the broken, the bound, the ones who have tried to stop and couldn\'t. His power is not weakened by the length of your struggle or the depth of your fall. He is the chain-breaker.</p><p>We encourage you to seek support — both spiritually through prayer and pastoral care, and practically through counselling, accountability, and where appropriate, medical support. Freedom is not always instantaneous, but it is real and it is available for you today.</p>`,
-        prayer: `Lord Jesus, I am honest — there are chains in my life that I cannot break on my own. I have tried and I have failed. But Your Word says that if the Son sets me free, I am free indeed. I receive that freedom by faith right now. Break every chain, every compulsion, every addiction that has had a hold on my life. I am not defined by my struggle — I am defined by Your blood. I choose freedom today. Amen.`,
+        pastoralBody: `<p>Addiction, bondage, compulsive behaviour, secret sin â€” these are areas where shame often keeps people trapped in silence. But shame has no power where truth is spoken. The first step to freedom is honesty.</p><p>Jesus did not come for perfect people. He came for the broken, the bound, the ones who have tried to stop and couldn\'t. His power is not weakened by the length of your struggle or the depth of your fall. He is the chain-breaker.</p><p>We encourage you to seek support â€” both spiritually through prayer and pastoral care, and practically through counselling, accountability, and where appropriate, medical support. Freedom is not always instantaneous, but it is real and it is available for you today.</p>`,
+        prayer: `Lord Jesus, I am honest â€” there are chains in my life that I cannot break on my own. I have tried and I have failed. But Your Word says that if the Son sets me free, I am free indeed. I receive that freedom by faith right now. Break every chain, every compulsion, every addiction that has had a hold on my life. I am not defined by my struggle â€” I am defined by Your blood. I choose freedom today. Amen.`,
         prayerTitle: 'A Prayer for Freedom',
         scriptures: [
           { ref: 'John 8:36', text: '"So if the Son sets you free, you will be free indeed."' },
           { ref: 'Romans 6:14', text: '"For sin shall no longer be your master, because you are not under the law, but under grace."' },
           { ref: 'Galatians 5:1', text: '"It is for freedom that Christ has set us free. Stand firm, then."' },
-          { ref: '1 Corinthians 10:13', text: '"God is faithful; he will not let you be tempted beyond what you can bear… he will also provide a way out."' },
+          { ref: '1 Corinthians 10:13', text: '"God is faithful; he will not let you be tempted beyond what you can bearâ€¦ he will also provide a way out."' },
         ],
         sermons: ['Breaking Every Chain', 'The Delivered Life', 'When Grace Finds You in the Pit'],
       },
@@ -530,32 +534,32 @@
         verse: '"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."',
         ref: 'John 3:16',
         pastoralTitle: 'A Message for Those Searching',
-        pastoralBody: `<p>Maybe you have always been curious about God but never taken the step. Maybe you walked away years ago and are wondering if you can come back. Maybe life has brought you to a place where you realise you need something bigger than yourself.</p><p>Here is the greatest news you will ever hear: God loves you. Not the cleaned-up version of you — you, as you are right now. He sent His Son Jesus to live the life you couldn\'t, die the death you deserved, and rise again so that you could be completely forgiven and fully alive.</p><p>Giving your life to Jesus is the most significant decision you will ever make. It doesn\'t require perfection or a long religious history. It requires faith — simply believing and receiving. You can do that right now.</p>`,
+        pastoralBody: `<p>Maybe you have always been curious about God but never taken the step. Maybe you walked away years ago and are wondering if you can come back. Maybe life has brought you to a place where you realise you need something bigger than yourself.</p><p>Here is the greatest news you will ever hear: God loves you. Not the cleaned-up version of you â€” you, as you are right now. He sent His Son Jesus to live the life you couldn\'t, die the death you deserved, and rise again so that you could be completely forgiven and fully alive.</p><p>Giving your life to Jesus is the most significant decision you will ever make. It doesn\'t require perfection or a long religious history. It requires faith â€” simply believing and receiving. You can do that right now.</p>`,
         prayer: `Jesus, I believe that You are the Son of God. I believe that You died for my sins and rose from the dead. I am sorry for the life I have lived apart from You. I turn from my sin and I turn to You. Come into my heart. Be my Lord and my Saviour. Make me new. I receive Your forgiveness right now. I am Yours. Amen.`,
         prayerTitle: 'Pray to Give Your Life to Jesus',
         scriptures: [
           { ref: 'Romans 10:9', text: '"If you declare with your mouth, \'Jesus is Lord,\' and believe in your heart that God raised him from the dead, you will be saved."' },
-          { ref: 'John 3:16', text: '"For God so loved the world that he gave his one and only Son…"' },
+          { ref: 'John 3:16', text: '"For God so loved the world that he gave his one and only Sonâ€¦"' },
           { ref: '2 Corinthians 5:17', text: '"Therefore, if anyone is in Christ, the new creation has come: the old has gone, the new is here!"' },
-          { ref: 'Ephesians 2:8–9', text: '"For it is by grace you have been saved, through faith — and this is not from yourselves, it is the gift of God."' },
+          { ref: 'Ephesians 2:8â€“9', text: '"For it is by grace you have been saved, through faith â€” and this is not from yourselves, it is the gift of God."' },
         ],
         sermons: ['What Does it Mean to be Born Again?', 'The God Who Runs Towards You', 'Starting Over With Jesus'],
       },
       loneliness: {
         label: 'Loneliness & Isolation',
         title: 'You Were Made For Community',
-        subtitle: 'Feeling invisible is one of the deepest pains a person can carry. But God sees you — fully, completely, and with love.',
+        subtitle: 'Feeling invisible is one of the deepest pains a person can carry. But God sees you â€” fully, completely, and with love.',
         verse: '"I will never leave you nor forsake you."',
         ref: 'Hebrews 13:5',
         pastoralTitle: 'To the One Who Feels Unseen',
-        pastoralBody: `<p>Loneliness is one of the most prevalent struggles of our generation. You can be surrounded by people and still feel completely alone. You can be active on social media and feel deeply disconnected. And no one would ever know.</p><p>God\'s design for humanity was relationship — first with Him, and then with others. When that is broken, something in us aches. That ache is not weakness; it is proof that you were made for more.</p><p>The God of the Bible is a God who sees. He saw Hagar in the wilderness when everyone had abandoned her. He sees you. And we — the Glory Zone family — want you to know that there is a community here that has been looking for someone exactly like you.</p>`,
-        prayer: `Father, the silence is heavy and the isolation feels real. I don\'t want to pretend — I am lonely. But I know that You see me. You saw Hagar in the desert when no one else did. You see me right now. Fill this empty space with Your presence. Lead me to people who will know me and love me. Give me courage to reach out. Remind me that I am never truly alone. Amen.`,
+        pastoralBody: `<p>Loneliness is one of the most prevalent struggles of our generation. You can be surrounded by people and still feel completely alone. You can be active on social media and feel deeply disconnected. And no one would ever know.</p><p>God\'s design for humanity was relationship â€” first with Him, and then with others. When that is broken, something in us aches. That ache is not weakness; it is proof that you were made for more.</p><p>The God of the Bible is a God who sees. He saw Hagar in the wilderness when everyone had abandoned her. He sees you. And we â€” the Glory Zone family â€” want you to know that there is a community here that has been looking for someone exactly like you.</p>`,
+        prayer: `Father, the silence is heavy and the isolation feels real. I don\'t want to pretend â€” I am lonely. But I know that You see me. You saw Hagar in the desert when no one else did. You see me right now. Fill this empty space with Your presence. Lead me to people who will know me and love me. Give me courage to reach out. Remind me that I am never truly alone. Amen.`,
         prayerTitle: 'A Prayer in Your Loneliness',
         scriptures: [
           { ref: 'Hebrews 13:5', text: '"Never will I leave you; never will I forsake you."' },
-          { ref: 'Psalm 139:1–3', text: '"You have searched me, Lord, and you know me. You know when I sit and when I rise…"' },
+          { ref: 'Psalm 139:1â€“3', text: '"You have searched me, Lord, and you know me. You know when I sit and when I riseâ€¦"' },
           { ref: 'Isaiah 43:1', text: '"Do not fear, for I have redeemed you; I have summoned you by name; you are mine."' },
-          { ref: 'Genesis 2:18', text: '"It is not good for man to be alone." — God created us for community.' },
+          { ref: 'Genesis 2:18', text: '"It is not good for man to be alone." â€” God created us for community.' },
         ],
         sermons: ['You Were Made For Community', 'When God Calls You by Name', 'Finding Your People'],
       },
@@ -566,12 +570,12 @@
         verse: '"He will turn the hearts of the parents to their children, and the hearts of the children to their parents."',
         ref: 'Malachi 4:6',
         pastoralTitle: 'When Family Feels Like a Battlefield',
-        pastoralBody: `<p>Family pain runs deep. Whether it is a prodigal child, a distant parent, a broken marriage, an estranged sibling, or years of dysfunction — the wounds from those closest to us cut the deepest.</p><p>God\'s heart is for the family. He designed it, He defined it, and He defends it. The enemy works overtime to destroy families because he knows they are the primary vehicle of God\'s love and legacy on the earth.</p><p>Restoration is possible — we have seen it happen too many times to doubt it. It may require hard conversations, professional counselling, time, and patience. But the God who turned the heart of a prodigal son back to his father can turn hearts in your family too.</p>`,
+        pastoralBody: `<p>Family pain runs deep. Whether it is a prodigal child, a distant parent, a broken marriage, an estranged sibling, or years of dysfunction â€” the wounds from those closest to us cut the deepest.</p><p>God\'s heart is for the family. He designed it, He defined it, and He defends it. The enemy works overtime to destroy families because he knows they are the primary vehicle of God\'s love and legacy on the earth.</p><p>Restoration is possible â€” we have seen it happen too many times to doubt it. It may require hard conversations, professional counselling, time, and patience. But the God who turned the heart of a prodigal son back to his father can turn hearts in your family too.</p>`,
         prayer: `Father, the pain in my family is deep and I don\'t know how to fix it. I bring every broken relationship to You now. You are the God who restores, who reconciles, who heals what is shattered. Soften hearts that are hard. Open doors that have been slammed shut. Give me wisdom to navigate these relationships with love and truth. I trust You with my family. Amen.`,
         prayerTitle: 'A Prayer for Your Family',
         scriptures: [
           { ref: 'Malachi 4:6', text: '"He will turn the hearts of the parents to their children, and the hearts of the children to their parents."' },
-          { ref: 'Luke 15:20', text: '"When he was still a great way off, his father saw him and had compassion…" — God runs toward the returning prodigal.' },
+          { ref: 'Luke 15:20', text: '"When he was still a great way off, his father saw him and had compassionâ€¦" â€” God runs toward the returning prodigal.' },
           { ref: 'Ephesians 5:25', text: '"Husbands, love your wives, just as Christ loved the church and gave himself up for her."' },
           { ref: 'Colossians 3:13', text: '"Bear with each other and forgive one another if any of you has a grievance against someone."' },
         ],
@@ -584,7 +588,7 @@
         verse: '"What God has joined together, let no man separate."',
         ref: 'Matthew 19:6',
         pastoralTitle: 'Hope for Struggling Marriages',
-        pastoralBody: `<p>Marriage crisis can feel like the end of everything. Infidelity, betrayal, communication breakdown, growing apart, or simply years of neglect — these things erode even the most well-intentioned union.</p><p>But we have seen God rebuild marriages from rubble. We have seen couples on the brink of divorce choose to let God do something miraculous. It does not happen without hard work, forgiveness, professional support, and a willingness from both parties to fight for the covenant they made.</p><p>If your marriage is in crisis, we strongly encourage you to seek pastoral counsel and professional Christian marriage counselling. But know this: God made that covenant with you, and His resources for your marriage are not exhausted.</p>`,
+        pastoralBody: `<p>Marriage crisis can feel like the end of everything. Infidelity, betrayal, communication breakdown, growing apart, or simply years of neglect â€” these things erode even the most well-intentioned union.</p><p>But we have seen God rebuild marriages from rubble. We have seen couples on the brink of divorce choose to let God do something miraculous. It does not happen without hard work, forgiveness, professional support, and a willingness from both parties to fight for the covenant they made.</p><p>If your marriage is in crisis, we strongly encourage you to seek pastoral counsel and professional Christian marriage counselling. But know this: God made that covenant with you, and His resources for your marriage are not exhausted.</p>`,
         prayer: `Lord, this marriage is struggling and I am afraid. But I know that You were present at the beginning of this covenant and You are present now. I surrender my marriage to You. Heal the wounds we have caused each other. Rebuild what has been broken. Give us both the grace to forgive, the courage to be honest, and the humility to seek help. Do what only You can do. In Jesus\' name. Amen.`,
         prayerTitle: 'A Prayer for Your Marriage',
         scriptures: [
@@ -605,7 +609,7 @@
       const topicKey = getParam('topic');
       const data = topics[topicKey] || topics.grief;
 
-      document.title = data.label + ' — Glory Zone Church';
+      document.title = data.label + ' â€” Glory Zone Church';
 
       document.getElementById('topic-breadcrumb').textContent = data.label;
       document.getElementById('hero-label').textContent = data.label;
@@ -633,7 +637,7 @@
       sermonsEl.innerHTML = '';
       data.sermons.forEach(title => {
         const div = document.createElement('div');
-        div.innerHTML = `<a href="sermons.html" class="sermon-mini-card"><div class="sermon-mini-card__icon">▶️</div><div><div class="sermon-mini-card__title">${title}</div><div class="sermon-mini-card__speaker">Pastor Karis Ameh Wealth</div></div></a>`;
+        div.innerHTML = `<a href="sermons.html" class="sermon-mini-card"><div class="sermon-mini-card__icon">â–¶ï¸</div><div><div class="sermon-mini-card__title">${title}</div><div class="sermon-mini-card__speaker">Pastor Karis Ameh Wealth</div></div></a>`;
         sermonsEl.appendChild(div);
       });
 
@@ -651,13 +655,13 @@
       if ('speechSynthesis' in window) {
         if (window.speechSynthesis.speaking) {
           window.speechSynthesis.cancel();
-          btn.textContent = '🔊 Read Aloud';
+          btn.textContent = 'ðŸ”Š Read Aloud';
         } else {
           const utterance = new SpeechSynthesisUtterance(text);
           utterance.rate = 0.85;
-          utterance.onend = () => { btn.textContent = '🔊 Read Aloud'; };
+          utterance.onend = () => { btn.textContent = 'ðŸ”Š Read Aloud'; };
           window.speechSynthesis.speak(utterance);
-          btn.textContent = '⏹ Stop Reading';
+          btn.textContent = 'â¹ Stop Reading';
         }
       }
     }
@@ -672,3 +676,4 @@
   </script>
 </body>
 </html>
+
